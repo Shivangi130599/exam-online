@@ -1,4 +1,4 @@
-package onlineExam2;
+package com.lti.entity;
 
 public class User {
 
