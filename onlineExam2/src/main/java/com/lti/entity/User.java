@@ -1,12 +1,14 @@
 package com.lti.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -33,7 +35,36 @@ public class User {
     @JoinColumn(name = "address_id")
     private Address address;
     
-    public String getRights() {
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_answer_id")
+    private UserAnswer useranswer;
+    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Result> results;
+    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Exam> exams;
+    
+    
+    public List<Exam> getExams() {
+		return exams;
+	}
+	public void setExams(List<Exam> exams) {
+		this.exams = exams;
+	}
+	public List<Result> getResults() {
+		return results;
+	}
+	public void setResults(List<Result> results) {
+		this.results = results;
+	}
+	public UserAnswer getUseranswer() {
+		return useranswer;
+	}
+	public void setUseranswer(UserAnswer useranswer) {
+		this.useranswer = useranswer;
+	}
+	public String getRights() {
 		return rights;
 	}
 	public void setRights(String rights) {

@@ -1,7 +1,22 @@
 package com.lti.entity;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_question_bank")
 public class QuestionBank {
+	@Id
+	@GeneratedValue
+	@Column(name = "question_id")
 	private int id;
+	
 	private String question;
 	private String type;
 	private String correctAnswer;
@@ -12,6 +27,17 @@ public class QuestionBank {
 	private String option4;
 	private String option5;
 	private String hint;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "subject_id")
+    private Subjects subjects;
+	
+	public Subjects getSubjects() {
+		return subjects;
+	}
+	public void setSubjects(Subjects subjects) {
+		this.subjects = subjects;
+	}
 	public int getId() {
 		return id;
 	}
