@@ -1,7 +1,22 @@
 package com.lti.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_address")
+
 public class Address {
-	private int addressId;
+	
+	@Id
+	@GeneratedValue
+	@Column(name = "address_id")
+	private int id;
 	private String street;
 	private String landmark;
 	private String locality;
@@ -9,14 +24,25 @@ public class Address {
 	private int pincode;
 	private String state;
 	private String country;
-	public int getAddressId() {
-		return addressId;
+	
+	//@JoinColumn(name = "address_id")
+	//private User user;
+	
+	/*public User getUser() {
+		return user;
 	}
-	public void setAddressId(int addressId) {
-		this.addressId = addressId;
-	}
+	public void setUser(User user) {
+		this.user = user;
+	}*/
+	
 	public String getStreet() {
 		return street;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public void setStreet(String street) {
 		this.street = street;

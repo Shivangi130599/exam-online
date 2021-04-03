@@ -2,8 +2,22 @@ package com.lti.entity;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_user")
 public class User {
+	
+	@Id
+	@GeneratedValue
     private int id;
+	
     private String firstName;
     private String middleName;
     private String lastName;
@@ -13,7 +27,26 @@ public class User {
     private int phoneNo;
     private String password;
     private String qualification;
-    public int getId() {
+    private String rights;
+    
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
+    private Address address;
+    
+    public String getRights() {
+		return rights;
+	}
+	public void setRights(String rights) {
+		this.rights = rights;
+	}
+	
+    public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public int getId() {
         return id;
     }
     public void setId(int id) {
