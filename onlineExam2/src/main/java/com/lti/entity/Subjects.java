@@ -1,10 +1,12 @@
 package com.lti.entity;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -13,17 +15,19 @@ public class Subjects {
 	@Id
 	@GeneratedValue
 	@Column(name = "subject_id")
-	private String sub_id;
+	private int id;
+	
 	private String subName;
 	
-	public String getSub_id() {
-		return sub_id;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "subjects" )
+	
+	public int getId() {
+		return id;
 	}
 
-	public void setSub_id(String sub_id) {
-		this.sub_id = sub_id;
+	public void setId(int id) {
+		this.id = id;
 	}
-	
 
 	public String getSubName() {
 		return subName;

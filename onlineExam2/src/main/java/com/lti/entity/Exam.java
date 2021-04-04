@@ -1,4 +1,4 @@
-package com.lti.entity;
+/*package com.lti.entity;
 
 import java.time.LocalDate;
 
@@ -16,7 +16,7 @@ public class Exam {
 	@GeneratedValue
 	private int id;
 	private LocalDate date;
-	
+	/*
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
@@ -26,8 +26,8 @@ public class Exam {
 	}
 	public void setUser(User user) {
 		this.user = user;
-	}
-	public int getId() {
+	}*/
+	/*public int getId() {
 		return id;
 	}
 	public void setId(int id) {
@@ -41,4 +41,4 @@ public class Exam {
 	}
 	
 	
-}
+}*/

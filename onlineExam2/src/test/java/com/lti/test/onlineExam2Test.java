@@ -2,6 +2,8 @@ package com.lti.test;
 
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -292,12 +294,56 @@ public class onlineExam2Test {
 		 qb17.setCorrectAnswer("None of these");
 		 qb17.setHint(null);
 		 
+		 qb.setSubjects(sub);
+		 qb1.setSubjects(sub);
+		 qb2.setSubjects(sub);
+		 qb3.setSubjects(sub1);
+		 qb4.setSubjects(sub1);
+		 qb5.setSubjects(sub1);
+		 
+		 qb6.setSubjects(sub2);
+		 qb7.setSubjects(sub2);
+		 qb8.setSubjects(sub2);
+		 qb9.setSubjects(sub3);
+		 qb10.setSubjects(sub3);
+		 qb11.setSubjects(sub3);
+		 
+		 qb12.setSubjects(sub4);
+		 qb13.setSubjects(sub4);
+		 qb14.setSubjects(sub4);
+		 qb15.setSubjects(sub5);
+		 qb16.setSubjects(sub5);
+		 qb17.setSubjects(sub5);
+		 
+		 List<QuestionBank> q = new ArrayList<QuestionBank>();
+		 
+		 q.add(qb);
+		 q.add(qb1);
+		 q.add(qb2);
+		 q.add(qb3);
+		 q.add(qb4);
+		 q.add(qb5);
+		 q.add(qb6);
+		 q.add(qb7);
+		 q.add(qb8);
+		 q.add(qb9);
+		 q.add(qb10);
+		 q.add(qb11);
+		 q.add(qb12);
+		 q.add(qb13);
+		 q.add(qb14);
+		 q.add(qb15);
+		 q.add(qb16);
+		 q.add(qb17);
+		 
+		 
 		 dao.save(sub);
 		 dao.save(sub1);
 		 dao.save(sub2);
 		 dao.save(sub3);
 		 dao.save(sub4);
-		 dao.save(sub5);	 
+		 dao.save(sub5);
+		 
 		 
 	}
 
