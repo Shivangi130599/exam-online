@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,18 +17,18 @@ public class QuestionBank {
 	@Column(name = "question_id")
 	private int id;
 	
-	private String question;
 	private String type;
-	private String correctAnswer;
 	private int marks;
+	private String question;
 	private String option1;
 	private String option2;
 	private String option3;
 	private String option4;
 	private String option5;
+	private String correctAnswer;
 	private String hint;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "subject_id")
     private Subjects subjects;
 	

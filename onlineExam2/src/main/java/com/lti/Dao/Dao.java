@@ -20,7 +20,6 @@ public class Dao {
 			tx.begin();
 			
 			em.merge(obj);
-			//em.merge(obj1);
 			
 			tx.commit();
 		
