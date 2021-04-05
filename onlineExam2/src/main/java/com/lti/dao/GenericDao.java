@@ -6,7 +6,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 public class GenericDao {
-public void save(Object obj) {
+public Object save(Object e) {
 		
 		EntityManagerFactory emf = null;
 		EntityManager em = null;
@@ -18,13 +18,16 @@ public void save(Object obj) {
 			EntityTransaction tx = em.getTransaction();
 			tx.begin();
 			
-			em.merge(obj);
-			
+			Object obj = em.merge(e);
+
 			tx.commit();
+			
+			return obj;
 		
 		}
-		catch(Exception e) {
-			e.printStackTrace();
+		catch(Exception ex) {
+			ex.printStackTrace();
+			return null;
 		}
 		finally {
 			em.close();

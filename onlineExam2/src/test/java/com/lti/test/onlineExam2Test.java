@@ -12,6 +12,7 @@ import com.lti.dao.GenericDao;
 import com.lti.entity.Address;
 import com.lti.entity.Exam;
 import com.lti.entity.QuestionBank;
+import com.lti.entity.Result;
 import com.lti.entity.Subject;
 import com.lti.entity.User;
 
@@ -386,12 +387,28 @@ public class onlineExam2Test {
 		
 		GenericDao dao = new GenericDao();
 		
-		User u = (User)dao.fetch(User.class, 72);
+		User u = (User)dao.fetch(User.class, 477);
 		Exam ex = new Exam();
-		ex.setDate(LocalDate.of(2020, 10, 10));
+		ex.setDate(LocalDate.now());
 		ex.setUser(u);
 		
 		dao.save(ex);		
+	}
+	
+	@Test
+	public void userAndResult() {
+		
+		GenericDao dao = new GenericDao();
+		User u = (User)dao.fetch(User.class, 477);
+		
+		Result result = new Result();
+		result.setScore(50);
+		result.setAttempts(1);
+		
+		result.setUser(u);
+		
+		dao.save(result);
+		
 	}
 
 }

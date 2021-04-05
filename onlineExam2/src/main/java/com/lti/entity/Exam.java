@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_exam")
+@Table(name = "tbl_exams")
 public class Exam {
 	
 	@Id
@@ -19,12 +19,12 @@ public class Exam {
 	@Column(name = "exam_id")
 	private int id;
 	
+	@Column(name = "exam_date")
+	private LocalDate date;
+	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
-	
-	@Column(name = "exam_date")
-	private LocalDate date;
 	
 	public User getUser() {
 		return user;

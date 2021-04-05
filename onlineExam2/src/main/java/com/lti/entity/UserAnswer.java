@@ -17,7 +17,6 @@ public class UserAnswer {
 	@Column(name = "answer_given")
 	private String answerGiven;
 	
-	
 	public int getId() {
 		return id;
 	}

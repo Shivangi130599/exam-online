@@ -14,7 +14,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_user")
+@Table(name = "tbl_users")
 public class User {
 	
 	@Id
@@ -60,10 +60,10 @@ public class User {
     @JoinColumn(name = "user_answer_id")
     private UserAnswer useranswer;
     
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Result> results;
     
-   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+   @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Exam> exams;
     
     
