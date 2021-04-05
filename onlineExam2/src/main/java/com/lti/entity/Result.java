@@ -1,5 +1,6 @@
 package com.lti.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,8 +13,13 @@ import javax.persistence.Table;
 public class Result {
 	@Id
 	@GeneratedValue
+	@Column(name = "result_id")
 	private int id;
+	
+	@Column(name = "score")
 	private float score;
+	
+	@Column(name = "attempts")
 	private int attempts;
 	
 	@ManyToOne

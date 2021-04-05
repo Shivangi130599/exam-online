@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,17 +19,37 @@ public class User {
 	
 	@Id
 	@GeneratedValue
+	@Column(name = "user_id")
     private int id;
 	
+	@Column(name = "first_name")
     private String firstName;
+	
+	@Column(name = "middle_name")
     private String middleName;
+	
+	@Column(name = "last_name")
     private String lastName;
+	
+	@Column(name = "email")
     private String email;
+	
+	@Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
+	
+	@Column(name = "gender")
     private String gender;
+	
+	@Column(name = "phone_no")
     private int phoneNo;
+	
+	@Column(name = "password")
     private String password;
+	
+	@Column(name = "qualification")
     private String qualification;
+	
+	@Column(name = "rights")
     private String rights;
     
     @OneToOne(cascade = CascadeType.ALL)

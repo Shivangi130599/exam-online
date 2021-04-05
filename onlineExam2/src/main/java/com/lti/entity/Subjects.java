@@ -18,6 +18,8 @@ public class Subjects {
 	@GeneratedValue
 	@Column(name = "subject_id")
 	private int id;
+	
+	@Column(name = "subject_name")
 	private String subName;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "subjects" )

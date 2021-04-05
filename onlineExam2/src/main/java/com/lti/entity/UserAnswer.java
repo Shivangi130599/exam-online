@@ -13,6 +13,8 @@ public class UserAnswer {
 	@GeneratedValue
 	@Column(name = "user_answer_id")
 	private int id;
+	
+	@Column(name = "answer_given")
 	private String answerGiven;
 	
 	

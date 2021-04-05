@@ -20,14 +20,31 @@ public class QuestionBank {
 	@Column(name = "ques_type")
 	private String type;
 	
+	@Column(name = "marks")
 	private int marks;
+	
+	@Column(name = "question")
 	private String question;
+	
+	@Column(name = "option_1")
 	private String option1;
+	
+	@Column(name = "option_2")
 	private String option2;
+	
+	@Column(name = "option_3")
 	private String option3;
+	
+	@Column(name = "option_4")
 	private String option4;
+	
+	@Column(name = "option_5")
 	private String option5;
+	
+	@Column(name = "correct_answer")
 	private String correctAnswer;
+	
+	@Column(name = "hint")
 	private String hint;
 	
 	@ManyToOne(cascade = CascadeType.ALL)

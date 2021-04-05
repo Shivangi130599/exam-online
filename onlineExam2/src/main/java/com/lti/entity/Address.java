@@ -15,12 +15,26 @@ public class Address {
 	@GeneratedValue
 	@Column(name = "address_id")
 	private int id;
+	
+	@Column(name = "street")
 	private String street;
+	
+	@Column(name = "landmark")
 	private String landmark;
+	
+	@Column(name = "locality")
 	private String locality;
+	
+	@Column(name = "city")
 	private String city;
+	
+	@Column(name = "pincode")
 	private int pincode;
+	
+	@Column(name = "state")
 	private String state;
+	
+	@Column(name = "country")
 	private String country;
 	
 	public String getStreet() {

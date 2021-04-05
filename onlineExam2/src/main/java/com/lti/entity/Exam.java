@@ -2,6 +2,7 @@ package com.lti.entity;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,12 +16,14 @@ public class Exam {
 	
 	@Id
 	@GeneratedValue
+	@Column(name = "exam_id")
 	private int id;
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
 	
+	@Column(name = "exam_date")
 	private LocalDate date;
 	
 	public User getUser() {
