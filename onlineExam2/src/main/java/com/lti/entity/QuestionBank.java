@@ -49,12 +49,13 @@ public class QuestionBank {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "subject_id")
-    private Subjects subjects;
+    private Subject subjects;
 	
-	public Subjects getSubjects() {
+	
+	public Subject getSubjects() {
 		return subjects;
 	}
-	public void setSubjects(Subjects subjects) {
+	public void setSubjects(Subject subjects) {
 		this.subjects = subjects;
 	}
 	public int getId() {

@@ -1,13 +1,12 @@
-package com.lti.Dao;
+package com.lti.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-public class Dao {
-
-	public void save(Object obj) {
+public class GenericDao {
+public void save(Object obj) {
 		
 		EntityManagerFactory emf = null;
 		EntityManager em = null;
@@ -36,26 +35,27 @@ public class Dao {
 	
 	public Object fetch(Class clazz, Object pk) {
 		
-	EntityManagerFactory emf = null;
-	EntityManager em = null;
+		EntityManagerFactory emf = null;
+		EntityManager em = null;
 	
-	try {	
-		emf = Persistence.createEntityManagerFactory("oracleTest");
-		em = emf.createEntityManager();
+		try {	
+			emf = Persistence.createEntityManagerFactory("oracleTest");
+			em = emf.createEntityManager();
 		
-		Object obj = em.find(clazz, pk);
-		return obj;
-	}
+			Object obj = em.find(clazz, pk);
+			return obj;
+		}
 	
-	catch(Exception e) {
-		e.printStackTrace();
-		return null;
-	}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	
-	finally {
-		em.close();
-		emf.close();
-	}
+		finally {
+			em.close();
+			emf.close();
+		}
 	
 	}
+
 }

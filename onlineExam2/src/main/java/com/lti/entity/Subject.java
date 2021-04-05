@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_subjects")
-public class Subjects {
+public class Subject {
 	@Id
 	@GeneratedValue
 	@Column(name = "subject_id")

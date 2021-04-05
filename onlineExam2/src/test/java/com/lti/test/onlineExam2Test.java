@@ -7,11 +7,12 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.lti.Dao.Dao;
+
+import com.lti.dao.GenericDao;
 import com.lti.entity.Address;
 import com.lti.entity.Exam;
 import com.lti.entity.QuestionBank;
-import com.lti.entity.Subjects;
+import com.lti.entity.Subject;
 import com.lti.entity.User;
 
 public class onlineExam2Test {
@@ -20,7 +21,7 @@ public class onlineExam2Test {
 	public void addUserAddressTogether() {
 
 			
-			Dao dao = new Dao();
+			GenericDao dao = new GenericDao();
 			//============================User 1===========================
 			User u = new User();
 			u.setFirstName("Aakash");
@@ -77,9 +78,9 @@ public class onlineExam2Test {
 	
 	@Test
 	public void addSubAlongWithQuestions() {
-		 Dao dao = new Dao();
+		 GenericDao dao = new GenericDao();
 		 
-		 Subjects sub =  new Subjects();
+		 Subject sub =  new Subject();
 		 sub.setSubName("Java_level_1");
 		 
 		 QuestionBank qb = new QuestionBank();
@@ -118,7 +119,7 @@ public class onlineExam2Test {
 		 qb2.setHint(null);
 		 qb.setSubjects(sub);
 		 
-		 Subjects sub1 =  new Subjects();
+		 Subject sub1 =  new Subject();
 		 sub1.setSubName("Java_level_2");
 		 
 		 QuestionBank qb3 = new QuestionBank();
@@ -157,7 +158,7 @@ public class onlineExam2Test {
 		 qb5.setHint(null);
 		 qb.setSubjects(sub1);
 		 
-		 Subjects sub2 =  new Subjects();
+		 Subject sub2 =  new Subject();
 		 sub2.setSubName("Java_level_3");
 		 
 		 QuestionBank qb6 = new QuestionBank();
@@ -196,7 +197,7 @@ public class onlineExam2Test {
 		 qb8.setHint(null);
 		 qb.setSubjects(sub2);
 		 
-		 Subjects sub3 =  new Subjects();
+		 Subject sub3 =  new Subject();
 		 sub3.setSubName("Python_level_1");
 		 
 		 QuestionBank qb9 = new QuestionBank();
@@ -235,7 +236,7 @@ public class onlineExam2Test {
 		 qb11.setHint(null);
 		 qb.setSubjects(sub3);
 		 
-		 Subjects sub4=  new Subjects();
+		 Subject sub4=  new Subject();
 		 sub4.setSubName("Python_level_2");
 		 
 		 QuestionBank qb12 = new QuestionBank();
@@ -274,7 +275,7 @@ public class onlineExam2Test {
 		 qb14.setHint(null);
 		 qb.setSubjects(sub4);
 		 
-		 Subjects sub5 =  new Subjects();
+		 Subject sub5 =  new Subject();
 		 sub5.setSubName("Python_level_3");
 		 
 		 QuestionBank qb15 = new QuestionBank();
@@ -383,7 +384,7 @@ public class onlineExam2Test {
 	@Test
 	public void examWithUser() {
 		
-		Dao dao = new Dao();
+		GenericDao dao = new GenericDao();
 		
 		User u = (User)dao.fetch(User.class, 72);
 		Exam ex = new Exam();
