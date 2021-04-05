@@ -13,7 +13,7 @@ public class UserAnswer {
 	@GeneratedValue
 	@Column(name = "user_answer_id")
 	private int id;
-	//private String answerGiven;
+	private String answerGiven;
 	
 	
 	public int getId() {
@@ -22,12 +22,12 @@ public class UserAnswer {
 	public void setId(int id) {
 		this.id = id;
 	}
-	/*public String getAnswerGiven() {
+	public String getAnswerGiven() {
 		return answerGiven;
 	}
 	public void setAnswerGiven(String answerGiven) {
 		this.answerGiven = answerGiven;
-	}*/
+	}
 
 	
 

@@ -1,4 +1,4 @@
-/*package com.lti.entity;
+package com.lti.entity;
 
 import java.time.LocalDate;
 
@@ -12,22 +12,24 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tbl_exam")
 public class Exam {
+	
 	@Id
 	@GeneratedValue
 	private int id;
-	private LocalDate date;
-	/*
+	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
+	
+	private LocalDate date;
 	
 	public User getUser() {
 		return user;
 	}
 	public void setUser(User user) {
 		this.user = user;
-	}*/
-	/*public int getId() {
+	}
+	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
@@ -41,4 +43,4 @@ public class Exam {
 	}
 	
 	
-}*/
+}

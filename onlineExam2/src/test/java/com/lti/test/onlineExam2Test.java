@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.lti.Dao.Dao;
 import com.lti.entity.Address;
+import com.lti.entity.Exam;
 import com.lti.entity.QuestionBank;
 import com.lti.entity.Subjects;
 import com.lti.entity.User;
@@ -91,6 +92,7 @@ public class onlineExam2Test {
 		 qb.setOption4("Object-oriented");
 		 qb.setCorrectAnswer("Use of pointers");
 		 qb.setHint(null);
+		 qb.setSubjects(sub);
 		 
 		 QuestionBank qb1 = new QuestionBank();
 		 qb1.setType("SC");
@@ -102,6 +104,7 @@ public class onlineExam2Test {
 		 qb1.setOption4("Not a programming language");
 		 qb1.setCorrectAnswer("High level");
 		 qb1.setHint(null);
+		 qb.setSubjects(sub);
 		 
 		 QuestionBank qb2 = new QuestionBank();
 		 qb2.setType("SC");
@@ -113,6 +116,7 @@ public class onlineExam2Test {
 		 qb2.setOption4("JDB");
 		 qb2.setCorrectAnswer("JDB");
 		 qb2.setHint(null);
+		 qb.setSubjects(sub);
 		 
 		 Subjects sub1 =  new Subjects();
 		 sub1.setSubName("Java_level_2");
@@ -127,6 +131,7 @@ public class onlineExam2Test {
 		 qb3.setOption4("new List(3, false)");
 		 qb3.setCorrectAnswer("new List(3, true)");
 		 qb3.setHint(null);
+		 qb.setSubjects(sub1);
 		 
 		 QuestionBank qb4 = new QuestionBank();
 		 qb4.setType("SC");
@@ -138,6 +143,7 @@ public class onlineExam2Test {
 		 qb4.setOption4("void");
 		 qb4.setCorrectAnswer("int");
 		 qb4.setHint(null);
+		 qb.setSubjects(sub1);
 		 
 		 QuestionBank qb5 = new QuestionBank();
 		 qb5.setType("SC");
@@ -149,6 +155,7 @@ public class onlineExam2Test {
 		 qb5.setOption4("25");
 		 qb5.setCorrectAnswer("24");
 		 qb5.setHint(null);
+		 qb.setSubjects(sub1);
 		 
 		 Subjects sub2 =  new Subjects();
 		 sub2.setSubName("Java_level_3");
@@ -163,6 +170,7 @@ public class onlineExam2Test {
 		 qb6.setOption4("for ( int i = 2; i <= 20; i = 2* i )");
 		 qb6.setCorrectAnswer("for ( int i = 99; i >= 0; i / 9 )");
 		 qb6.setHint(null);
+		 qb.setSubjects(sub2);
 		 
 		 QuestionBank qb7 = new QuestionBank();
 		 qb7.setType("SC");
@@ -174,6 +182,7 @@ public class onlineExam2Test {
 		 qb7.setOption4("toString()");
 		 qb7.setCorrectAnswer("getName()");
 		 qb7.setHint(null);
+		 qb.setSubjects(sub2);
 		 
 		 QuestionBank qb8 = new QuestionBank();
 		 qb8.setType("SC");
@@ -185,6 +194,7 @@ public class onlineExam2Test {
 		 qb8.setOption4("It has no class name");
 		 qb8.setCorrectAnswer("It has no class name");
 		 qb8.setHint(null);
+		 qb.setSubjects(sub2);
 		 
 		 Subjects sub3 =  new Subjects();
 		 sub3.setSubName("Python_level_1");
@@ -199,6 +209,7 @@ public class onlineExam2Test {
 		 qb9.setOption4("None of these above");
 		 qb9.setCorrectAnswer("None of these above");
 		 qb9.setHint(null);
+		 qb.setSubjects(sub3);
 		 
 		 QuestionBank qb10 = new QuestionBank();
 		 qb10.setType("SC");
@@ -210,6 +221,7 @@ public class onlineExam2Test {
 		 qb10.setOption4("Wick van Rossum");
 		 qb10.setCorrectAnswer("Guido van Rossum");
 		 qb10.setHint(null);
+		 qb.setSubjects(sub3);
 		 
 		 QuestionBank qb11 = new QuestionBank();
 		 qb11.setType("SC");
@@ -221,6 +233,7 @@ public class onlineExam2Test {
 		 qb11.setOption4("1989");
 		 qb11.setCorrectAnswer("1989");
 		 qb11.setHint(null);
+		 qb.setSubjects(sub3);
 		 
 		 Subjects sub4=  new Subjects();
 		 sub4.setSubName("Python_level_2");
@@ -235,6 +248,7 @@ public class onlineExam2Test {
 		 qb12.setOption4("All of these above");
 		 qb12.setCorrectAnswer("C");
 		 qb12.setHint(null);
+		 qb.setSubjects(sub4);
 		 
 		 QuestionBank qb13 = new QuestionBank();
 		 qb13.setType("SC");
@@ -246,6 +260,7 @@ public class onlineExam2Test {
 		 qb13.setOption4("None of these");
 		 qb13.setCorrectAnswer(".py");
 		 qb13.setHint(null);
+		 qb.setSubjects(sub4);
 		 
 		 QuestionBank qb14 = new QuestionBank();
 		 qb14.setType("SC");
@@ -257,6 +272,7 @@ public class onlineExam2Test {
 		 qb14.setOption4("2005");
 		 qb14.setCorrectAnswer("2008");
 		 qb14.setHint(null);
+		 qb.setSubjects(sub4);
 		 
 		 Subjects sub5 =  new Subjects();
 		 sub5.setSubName("Python_level_3");
@@ -271,6 +287,7 @@ public class onlineExam2Test {
 		 qb15.setOption4("!");
 		 qb15.setCorrectAnswer("#");
 		 qb15.setHint(null);
+		 qb15.setSubjects(sub5);
 		 
 		 QuestionBank qb16 = new QuestionBank();
 		 qb16.setType("SC");
@@ -282,6 +299,7 @@ public class onlineExam2Test {
 		 qb16.setOption4("Argument");
 		 qb16.setCorrectAnswer("Function");
 		 qb16.setHint(null);
+		 qb.setSubjects(sub5);
 		 
 		 QuestionBank qb17 = new QuestionBank();
 		 qb17.setType("SC");
@@ -293,6 +311,7 @@ public class onlineExam2Test {
 		 qb17.setOption4("None of these");
 		 qb17.setCorrectAnswer("None of these");
 		 qb17.setHint(null);
+		 qb.setSubjects(sub5);
 		 
 		 qb.setSubjects(sub);
 		 qb1.setSubjects(sub);
@@ -316,26 +335,41 @@ public class onlineExam2Test {
 		 qb17.setSubjects(sub5);
 		 
 		 List<QuestionBank> q = new ArrayList<QuestionBank>();
-		 
 		 q.add(qb);
 		 q.add(qb1);
 		 q.add(qb2);
-		 q.add(qb3);
-		 q.add(qb4);
-		 q.add(qb5);
-		 q.add(qb6);
-		 q.add(qb7);
-		 q.add(qb8);
-		 q.add(qb9);
-		 q.add(qb10);
-		 q.add(qb11);
-		 q.add(qb12);
-		 q.add(qb13);
-		 q.add(qb14);
-		 q.add(qb15);
-		 q.add(qb16);
-		 q.add(qb17);
 		 
+		 List<QuestionBank> q1 = new ArrayList<QuestionBank>();
+		 q1.add(qb3);
+		 q1.add(qb4);
+		 q1.add(qb5);
+		 
+		 List<QuestionBank> q2 = new ArrayList<QuestionBank>();
+		 q2.add(qb6);
+		 q2.add(qb7);
+		 q2.add(qb8);
+		 
+		 List<QuestionBank> q3 = new ArrayList<QuestionBank>();
+		 q3.add(qb9);
+		 q3.add(qb10);
+		 q3.add(qb11);
+		 
+		 List<QuestionBank> q4 = new ArrayList<QuestionBank>();
+		 q4.add(qb12);
+		 q4.add(qb13);
+		 q4.add(qb14);
+		 
+		 List<QuestionBank> q5 = new ArrayList<QuestionBank>();
+		 q5.add(qb15);
+		 q5.add(qb16);
+		 q5.add(qb17);
+		 
+		 sub.setQuestions(q);
+		 sub1.setQuestions(q1);
+		 sub2.setQuestions(q2);
+		 sub3.setQuestions(q3);
+		 sub4.setQuestions(q4);
+		 sub5.setQuestions(q5);
 		 
 		 dao.save(sub);
 		 dao.save(sub1);
@@ -343,8 +377,20 @@ public class onlineExam2Test {
 		 dao.save(sub3);
 		 dao.save(sub4);
 		 dao.save(sub5);
-		 
-		 
+	 
+	}
+	
+	@Test
+	public void examWithUser() {
+		
+		Dao dao = new Dao();
+		
+		User u = (User)dao.fetch(User.class, 72);
+		Exam ex = new Exam();
+		ex.setDate(LocalDate.of(2020, 10, 10));
+		ex.setUser(u);
+		
+		dao.save(ex);		
 	}
 
 }

@@ -1,6 +1,8 @@
 package com.lti.entity;
 
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,11 +18,20 @@ public class Subjects {
 	@GeneratedValue
 	@Column(name = "subject_id")
 	private int id;
-	
 	private String subName;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "subjects" )
+	private List<QuestionBank> questions;
 	
+	
+	public List<QuestionBank> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(List<QuestionBank> questions) {
+		this.questions = questions;
+	}
+
 	public int getId() {
 		return id;
 	}

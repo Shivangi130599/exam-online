@@ -34,7 +34,7 @@ public class Dao {
 		
 	}
 	
-	/*public Object fetch(Class clazz, Object pk) {
+	public Object fetch(Class clazz, Object pk) {
 		
 	EntityManagerFactory emf = null;
 	EntityManager em = null;
@@ -57,5 +57,5 @@ public class Dao {
 		emf.close();
 	}
 	
-	}*/
+	}
 }

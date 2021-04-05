@@ -17,7 +17,9 @@ public class QuestionBank {
 	@Column(name = "question_id")
 	private int id;
 	
+	@Column(name = "ques_type")
 	private String type;
+	
 	private int marks;
 	private String question;
 	private String option1;
