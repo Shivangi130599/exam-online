@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -51,7 +52,18 @@ public class QuestionBank {
     @JoinColumn(name = "subject_id")
     private Subject subjects;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_answer_id")
+    private UserAnswer userAnswers;
 	
+	
+	
+	public UserAnswer getUserAnswers() {
+		return userAnswers;
+	}
+	public void setUserAnswers(UserAnswer userAnswers) {
+		this.userAnswers = userAnswers;
+	}
 	public Subject getSubjects() {
 		return subjects;
 	}

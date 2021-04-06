@@ -15,6 +15,7 @@ import com.lti.entity.QuestionBank;
 import com.lti.entity.Result;
 import com.lti.entity.Subject;
 import com.lti.entity.User;
+import com.lti.entity.UserAnswer;
 
 public class onlineExam2Test {
 	
@@ -387,7 +388,7 @@ public class onlineExam2Test {
 		
 		GenericDao dao = new GenericDao();
 		
-		User u = (User)dao.fetch(User.class, 477);
+		User u = (User)dao.fetch(User.class, 125);
 		Exam ex = new Exam();
 		ex.setDate(LocalDate.now());
 		ex.setUser(u);
@@ -399,15 +400,37 @@ public class onlineExam2Test {
 	public void userAndResult() {
 		
 		GenericDao dao = new GenericDao();
-		User u = (User)dao.fetch(User.class, 477);
+		User u = (User)dao.fetch(User.class, 125);
+		Subject sub = (Subject)dao.fetch(Subject.class, 128);
 		
 		Result result = new Result();
 		result.setScore(50);
 		result.setAttempts(1);
+		result.setSubject(sub);
 		
 		result.setUser(u);
 		
 		dao.save(result);
+		
+	}
+	@Test
+	public void fetchUserAnswer() {
+		GenericDao dao = new GenericDao();
+		
+		User u = (User)dao.fetch(User.class, 125);
+		QuestionBank qb = (QuestionBank)dao.fetch(QuestionBank.class, 131);
+		Exam exam = (Exam)dao.fetch(Exam.class, 154);
+		
+		UserAnswer ua = new UserAnswer();
+		ua.setAnswerGiven(qb.getOption2());
+		
+		ua.setQuestionBank(qb);
+		ua.setUser(u);
+		ua.setExam(exam);
+		
+		dao.save(ua);
+		
+		
 		
 	}
 

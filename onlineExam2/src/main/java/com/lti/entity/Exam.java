@@ -1,13 +1,16 @@
 package com.lti.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,6 +29,16 @@ public class Exam {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
+	@OneToMany(cascade = CascadeType.ALL,mappedBy="exam")
+    private List<UserAnswer> userAnswers;
+	
+	
+	public List<UserAnswer> getUserAnswers() {
+		return userAnswers;
+	}
+	public void setUserAnswers(List<UserAnswer> userAnswers) {
+		this.userAnswers = userAnswers;
+	}
 	public User getUser() {
 		return user;
 	}

@@ -56,9 +56,8 @@ public class User {
     @JoinColumn(name = "address_id")
     private Address address;
     
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_answer_id")
-    private UserAnswer useranswer;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<UserAnswer> userAnswers;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Result> results;
@@ -67,7 +66,13 @@ public class User {
     private List<Exam> exams;
     
     
-    public List<Exam> getExams() {
+    public List<UserAnswer> getUserAnswers() {
+	return userAnswers;
+}
+public void setUserAnswers(List<UserAnswer> userAnswers) {
+	this.userAnswers = userAnswers;
+}
+	public List<Exam> getExams() {
 		return exams;
 	}
 	public void setExams(List<Exam> exams) {
@@ -78,12 +83,6 @@ public class User {
 	}
 	public void setResults(List<Result> results) {
 		this.results = results;
-	}
-	public UserAnswer getUseranswer() {
-		return useranswer;
-	}
-	public void setUseranswer(UserAnswer useranswer) {
-		this.useranswer = useranswer;
 	}
 	public String getRights() {
 		return rights;

@@ -25,7 +25,20 @@ public class Subject {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "subjects" )
 	private List<QuestionBank> questions;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "subject")
+	private List<Result> results;
 	
+	
+	
+	
+	public List<Result> getResults() {
+		return results;
+	}
+
+	public void setResults(List<Result> results) {
+		this.results = results;
+	}
+
 	public List<QuestionBank> getQuestions() {
 		return questions;
 	}
