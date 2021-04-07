@@ -11,7 +11,7 @@ version="2.0">
 <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
 <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe" />
 <property name="javax.persistence.jdbc.user" value="system" />
-<property name="javax.persistence.jdbc.password" value="newuser123" />
+<property name="javax.persistence.jdbc.password" value="mui" />
 
  <!-- Additional ORM specific settings -->
 <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- Auto creation of tables -->
