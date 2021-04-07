@@ -388,7 +388,7 @@ public class onlineExam2Test {
 		
 		GenericDao dao = new GenericDao();
 		
-		User u = (User)dao.fetch(User.class, 125);
+		User u = (User)dao.fetch(User.class, 509);
 		Exam ex = new Exam();
 		ex.setDate(LocalDate.now());
 		ex.setUser(u);
@@ -400,8 +400,8 @@ public class onlineExam2Test {
 	public void userAndResult() {
 		
 		GenericDao dao = new GenericDao();
-		User u = (User)dao.fetch(User.class, 125);
-		Subject sub = (Subject)dao.fetch(Subject.class, 128);
+		User u = (User)dao.fetch(User.class, 509);
+		Subject sub = (Subject)dao.fetch(Subject.class, 512);
 		
 		Result result = new Result();
 		result.setScore(50);
@@ -417,9 +417,9 @@ public class onlineExam2Test {
 	public void fetchUserAnswer() {
 		GenericDao dao = new GenericDao();
 		
-		User u = (User)dao.fetch(User.class, 125);
-		QuestionBank qb = (QuestionBank)dao.fetch(QuestionBank.class, 131);
-		Exam exam = (Exam)dao.fetch(Exam.class, 154);
+		User u = (User)dao.fetch(User.class, 509);
+		QuestionBank qb = (QuestionBank)dao.fetch(QuestionBank.class, 533);
+		Exam exam = (Exam)dao.fetch(Exam.class, 537);
 		
 		UserAnswer ua = new UserAnswer();
 		ua.setAnswerGiven(qb.getOption2());
