@@ -3,6 +3,7 @@ package com.lti.test;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
@@ -436,9 +437,14 @@ public class onlineExam2Test {
 	public void fetchQuestionsUsingSubject() {
 		QuestionSubjectDao dao = new QuestionSubjectDao();
 		//QuestionBank q= (QuestionBank)dao.fetch(QuestionBank.class, 59);
-		Subject sub = (Subject)dao.fetch(Subject.class, 58);
-		 List<QuestionBank> list = dao.fetchQuestions(58);
-		 for(QuestionBank qb:list) {
+		Subject sub = (Subject)dao.fetch(Subject.class, 512);
+		List<QuestionBank> list = dao.fetchQuestions(sub.getId());
+		System.out.println(list.toString());
+		System.out.println(list.getClass());
+		System.out.println(list.size());
+		/*for(QuestionBank qb:list) {
+			 //System.out.println(list.get(i));
+			 //System.out.println(list.get(qb));
 			 System.out.println(qb.getQuestion());
 			 System.out.println(qb.getOption1());
 			 System.out.println(qb.getOption2());
@@ -446,13 +452,8 @@ public class onlineExam2Test {
 			 System.out.println(qb.getOption4());
 			 System.out.println(qb.getMarks());
 			 System.out.println(qb.getSubjects().getSubName());
-			 }
-			 
-		 
-		
+		}*/
 	}
-	
-		
 }
 
 
