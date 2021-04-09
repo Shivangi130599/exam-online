@@ -17,7 +17,8 @@ public class QuestionSubjectDao extends GenericDao{
 		try {
 			emf = Persistence.createEntityManagerFactory("oracleTest");
 			em = emf.createEntityManager();
-			String jpql = "select s.subject_name,q.question, q.option_1,q.option_2,q.option_3,q.option_4 from QuestionBank q inner join q.QuestionBank s where s.subjct_id <= :id";
+			String jpql = "select s,q "
+					+ "from Subject s inner join  s.questions q where s.id = :id ";
 			Query q = em.createQuery(jpql);
 			q.setParameter("id",id);
 			List<QuestionBank> list = q.getResultList();

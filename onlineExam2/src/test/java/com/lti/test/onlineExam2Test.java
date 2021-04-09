@@ -9,6 +9,8 @@ import org.junit.Test;
 
 
 import com.lti.dao.GenericDao;
+import com.lti.dao.QuestionSubjectDao;
+import com.lti.dao.UserAddressResultSubjectExamDao;
 import com.lti.entity.Address;
 import com.lti.entity.Exam;
 import com.lti.entity.QuestionBank;
@@ -429,9 +431,28 @@ public class onlineExam2Test {
 		ua.setExam(exam);
 		
 		dao.save(ua);
-		
-		
+	}
+	@Test
+	public void fetchQuestionsUsingSubject() {
+		QuestionSubjectDao dao = new QuestionSubjectDao();
+		//QuestionBank q= (QuestionBank)dao.fetch(QuestionBank.class, 59);
+		Subject sub = (Subject)dao.fetch(Subject.class, 58);
+		 List<QuestionBank> list = dao.fetchQuestions(58);
+		 for(QuestionBank qb:list) {
+			 System.out.println(qb.getQuestion());
+			 System.out.println(qb.getOption1());
+			 System.out.println(qb.getOption2());
+			 System.out.println(qb.getOption3());
+			 System.out.println(qb.getOption4());
+			 System.out.println(qb.getMarks());
+			 System.out.println(qb.getSubjects().getSubName());
+			 }
+			 
+		 
 		
 	}
-
+	
+		
 }
+
+
