@@ -12,6 +12,7 @@ import org.junit.Test;
 import com.lti.dao.GenericDao;
 import com.lti.dao.QuestionSubjectDao;
 import com.lti.dao.UserAddressResultSubjectExamDao;
+import com.lti.dao.UserAnswerQuestionBankDao;
 import com.lti.entity.Address;
 import com.lti.entity.Exam;
 import com.lti.entity.QuestionBank;
@@ -391,7 +392,7 @@ public class onlineExam2Test {
 		
 		GenericDao dao = new GenericDao();
 		
-		User u = (User)dao.fetch(User.class, 509);
+		User u = (User)dao.fetch(User.class, 48);
 		Exam ex = new Exam();
 		ex.setDate(LocalDate.now());
 		ex.setUser(u);
@@ -403,8 +404,8 @@ public class onlineExam2Test {
 	public void userAndResult() {
 		
 		GenericDao dao = new GenericDao();
-		User u = (User)dao.fetch(User.class, 509);
-		Subject sub = (Subject)dao.fetch(Subject.class, 512);
+		User u = (User)dao.fetch(User.class, 48);
+		Subject sub = (Subject)dao.fetch(Subject.class, 62);
 		
 		Result result = new Result();
 		result.setScore(50);
@@ -416,7 +417,7 @@ public class onlineExam2Test {
 		dao.save(result);
 		
 	}
-	@Test
+	/*@Test
 	public void fetchUserAnswer() {
 		GenericDao dao = new GenericDao();
 		
@@ -437,10 +438,10 @@ public class onlineExam2Test {
 	public void fetchQuestionsUsingSubject() {
 		QuestionSubjectDao dao = new QuestionSubjectDao();
 		//QuestionBank q= (QuestionBank)dao.fetch(QuestionBank.class, 59);
-		Subject sub = (Subject)dao.fetch(Subject.class, 512);
+		Subject sub = (Subject)dao.fetch(Subject.class, 66);
 		List<QuestionBank> list = dao.fetchQuestions(sub.getId());
-		System.out.println(list.toString());
-		System.out.println(list.getClass());
+		System.out.println(list.toString().toString().toString());
+	/*	System.out.println(list.getClass());
 		System.out.println(list.size());
 		/*for(QuestionBank qb:list) {
 			 //System.out.println(list.get(i));
@@ -451,9 +452,21 @@ public class onlineExam2Test {
 			 System.out.println(qb.getOption3());
 			 System.out.println(qb.getOption4());
 			 System.out.println(qb.getMarks());
-			 System.out.println(qb.getSubjects().getSubName());
-		}*/
+			 System.out.println(qb.getSubjects().getSubName());*/
+		
+	
+	@Test
+	public void fetchUserDetails() {
+		UserAddressResultSubjectExamDao dao = new UserAddressResultSubjectExamDao();
+		dao.fetchresults(62,"Maharashtra","Mumbai",50);
+	}
+	@Test
+	
+	public void fetchUserAnswer() {
+		UserAnswerQuestionBankDao dao = new UserAnswerQuestionBankDao();
+		List <UserAnswer> list = (List<UserAnswer>) dao.fetchanswers(48);
+		for(UserAnswer u : list) {
+			System.out.println(u.getAnswerGiven() + "," + u.getQuestionBank().getQuestion());
+		}
 	}
 }
-
-

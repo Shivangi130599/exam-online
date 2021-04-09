@@ -11,15 +11,25 @@ import javax.persistence.Query;
 import com.lti.entity.User;
 
 public class UserAddressResultSubjectExamDao extends GenericDao{
-	public List<User> fetchresults(int id , String state , String city , int score){
+	public List<User> fetchresults(int id , String state , String city , float score){
 		EntityManagerFactory emf = null;
 		EntityManager em = null;
 		try {
 			emf = Persistence.createEntityManagerFactory("oracleTest");
 			em = emf.createEntityManager();
-			String jpql="Select u.first_name,u.email,u.phone_no,a.state,a.city from users u inner join u.address a inner join a.subjects s inner join s.results r where r.sub_id= :id & a.state :state & a.city :city & r.score =:score";
+			String jpql="Select u.firstName,u.email,u.phoneNo,a.state,a.city "
+					+ "from User u inner join u.address a "
+					+ "inner join u.results r "
+					+ "inner join r.subject s"
+					+ " where r.subject.id= :id "
+					+ "and a.state =:state"
+					+ " and a.city =:city"
+					+ " and r.score =:score";
 			Query q = em.createQuery(jpql);
 			q.setParameter("id",id);
+			q.setParameter("state",state);
+			q.setParameter("city",city);
+			q.setParameter("score",score);
 			List<User> list = q.getResultList();
 			return list;
 		}
