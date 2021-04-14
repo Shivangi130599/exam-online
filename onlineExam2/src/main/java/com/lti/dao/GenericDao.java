@@ -36,7 +36,7 @@ public Object save(Object e) {
 		
 	}
 	
-	public Object fetch(Class clazz, Object pk) {
+	public <E> E fetch(Class<E> clazz, Object pk) {
 		
 		EntityManagerFactory emf = null;
 		EntityManager em = null;
@@ -45,12 +45,12 @@ public Object save(Object e) {
 			emf = Persistence.createEntityManagerFactory("oracleTest");
 			em = emf.createEntityManager();
 		
-			Object obj = em.find(clazz, pk);
-			return obj;
+			E e = em.find(clazz, pk);
+			return e;
 		}
 	
-		catch(Exception e) {
-			e.printStackTrace();
+		catch(Exception ex) {
+			ex.printStackTrace();
 			return null;
 		}
 	

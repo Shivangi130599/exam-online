@@ -433,17 +433,17 @@ public class onlineExam2Test {
 		ua.setExam(exam);
 		
 		dao.save(ua);
-	}
+	}*/
 	@Test
 	public void fetchQuestionsUsingSubject() {
 		QuestionSubjectDao dao = new QuestionSubjectDao();
 		//QuestionBank q= (QuestionBank)dao.fetch(QuestionBank.class, 59);
-		Subject sub = (Subject)dao.fetch(Subject.class, 66);
+		Subject sub = (Subject)dao.fetch(Subject.class, 512);
 		List<QuestionBank> list = dao.fetchQuestions(sub.getId());
-		System.out.println(list.toString().toString().toString());
-	/*	System.out.println(list.getClass());
-		System.out.println(list.size());
-		/*for(QuestionBank qb:list) {
+		//System.out.println(list.toString().toString().toString());
+		//System.out.println(list.getClass());
+		//System.out.println(list.size());
+		for(QuestionBank qb:list) {
 			 //System.out.println(list.get(i));
 			 //System.out.println(list.get(qb));
 			 System.out.println(qb.getQuestion());
@@ -452,8 +452,9 @@ public class onlineExam2Test {
 			 System.out.println(qb.getOption3());
 			 System.out.println(qb.getOption4());
 			 System.out.println(qb.getMarks());
-			 System.out.println(qb.getSubjects().getSubName());*/
-		
+			 System.out.println(qb.getSubjects().getSubName());
+		}
+	}
 	
 	@Test
 	public void fetchUserDetails() {
